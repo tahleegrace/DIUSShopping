@@ -35,6 +35,17 @@
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Products\PricingStrategy.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Products\Product.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Products\" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
     <VisualStudio>
