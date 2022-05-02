@@ -1,9 +1,17 @@
 import { MacbookPro } from './MacbookPro';
 
 describe('MacBook Pro', () => {
-    it('should return the correct string for a specified quantity', () => {
-        const product = new MacbookPro();
-        product.quantity = 5;
-        expect(product.toString()).toEqual('mbp,mbp,mbp,mbp,mbp');
+    let product: MacbookPro;
+
+    beforeEach(() => {
+        product = new MacbookPro();
+    });
+
+    it('should have the correct SKU', () => {
+        expect(product.sku()).toEqual('mbp');
+    });
+
+    it('should have the correct name', () => {
+        expect(product.name()).toEqual('MacBook Pro');
     });
 });

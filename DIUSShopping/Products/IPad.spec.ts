@@ -1,9 +1,17 @@
 import { IPad } from './IPad';
 
 describe('IPad', () => {
-    it('should return the correct string for a specified quantity', () => {
-        const product = new IPad();
-        product.quantity = 5;
-        expect(product.toString()).toEqual('ipd,ipd,ipd,ipd,ipd');
+    let product: IPad;
+
+    beforeEach(() => {
+        product = new IPad();
+    });
+
+    it('should have the correct SKU', () => {
+        expect(product.sku()).toEqual('ipd');
+    });
+
+    it('should have the correct name', () => {
+        expect(product.name()).toEqual('Super iPad');
     });
 });

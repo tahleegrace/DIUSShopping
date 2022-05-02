@@ -1,9 +1,17 @@
 import { VGAAdapter } from './VGAAdapter';
 
 describe('VGA Adapter', () => {
-    it('should return the correct string for a specified quantity', () => {
-        const product = new VGAAdapter();
-        product.quantity = 5;
-        expect(product.toString()).toEqual('vga,vga,vga,vga,vga');
+    let product: VGAAdapter;
+
+    beforeEach(() => {
+        product = new VGAAdapter();
+    });
+
+    it('should have the correct SKU', () => {
+        expect(product.sku()).toEqual('vga');
+    });
+
+    it('should have the correct name', () => {
+        expect(product.name()).toEqual('VGA adapter');
     });
 });

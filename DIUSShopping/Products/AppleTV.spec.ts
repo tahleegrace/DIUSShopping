@@ -1,9 +1,17 @@
 import { AppleTV } from './AppleTV';
 
 describe('Apple TV', () => {
-    it('should return the correct string for a specified quantity', () => {
-        const product = new AppleTV();
-        product.quantity = 5;
-        expect(product.toString()).toEqual('atv,atv,atv,atv,atv');
+    let product: AppleTV;
+
+    beforeEach(() => {
+        product = new AppleTV();
+    });
+
+    it('should have the correct SKU', () => {
+        expect(product.sku()).toEqual('atv');
+    });
+
+    it('should have the correct name', () => {
+        expect(product.name()).toEqual('Apple TV');
     });
 });
