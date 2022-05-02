@@ -1,10 +1,9 @@
 import { Product } from "../Products/Product";
+import { ProductSKU } from "../Products/ProductSKU";
 import { PricingRule } from "./PricingRule";
 
 export class IPadPricingRule extends PricingRule {
     private static _instance = new IPadPricingRule();
-
-    ipadSku = 'ipd';
 
     private constructor() {
         super();
@@ -16,7 +15,7 @@ export class IPadPricingRule extends PricingRule {
         }
 
         // Find out how many IPads are in the cart.
-        const ipadsInCart = cart.filter(item => item.sku() === this.ipadSku);
+        const ipadsInCart = cart.filter(item => item.sku() === ProductSKU.iPad);
         let unitPrice: number;
 
         if (ipadsInCart.length > 4) {
