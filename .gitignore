@@ -26,6 +26,6 @@ lerna-debug.log
 .vscode
 *.map
 *.js
-/DIUSShoping/bin
-/DIUSShoping/obj
-/DIUSShoping/.vs
+/DIUSShopping/bin
+/DIUSShopping/obj
+/DIUSShopping/.vs
