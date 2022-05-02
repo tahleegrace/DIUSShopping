@@ -1,6 +1,6 @@
 import { VGAAdapter } from './VGAAdapter';
 
-describe('VGA Adapter', () => {
+describe('VGA adapter', () => {
     let product: VGAAdapter;
 
     beforeEach(() => {

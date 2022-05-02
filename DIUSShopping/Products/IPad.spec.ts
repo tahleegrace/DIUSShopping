@@ -1,6 +1,6 @@
 import { IPad } from './IPad';
 
-describe('IPad', () => {
+describe('iPad', () => {
     let product: IPad;
 
     beforeEach(() => {
