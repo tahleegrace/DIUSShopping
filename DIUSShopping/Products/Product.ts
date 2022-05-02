@@ -4,7 +4,7 @@ export abstract class Product {
     abstract name(): string;
 
     // How many products are purchased.
-    _quantity: number;
+    private _quantity: number;
 
     get quantity() {
         return this._quantity;
@@ -15,7 +15,7 @@ export abstract class Product {
     }
 
     // Unit price.
-    _unitPrice: number;
+    private _unitPrice: number;
 
     get unitPrice() {
         return this._unitPrice;
