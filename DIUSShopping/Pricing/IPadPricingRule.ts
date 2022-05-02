@@ -2,24 +2,28 @@ import { Product } from "../Products/Product";
 import { PricingRule } from "./PricingRule";
 
 export class IPadPricingRule extends PricingRule {
+    ipadSku = 'ipd';
+
     private constructor() {
         super();
     }
 
-    calculate(product: Product, cart: Product[]) {
-        if (product === null) {
-            throw new Error('product must not be null');
-        }
-
+    calculate(cart: Product[]) {
         if (cart === null) {
-            throw new Error('cart must not be null');
+            throw new Error('Cart must not be null');
         }
 
-        if (product.quantity > 4) {
-            product.unitPrice = 499.99;
+        // Find out how many IPads are in the cart.
+        const ipadsInCart = cart.filter(item => item.sku() === this.ipadSku);
+        let unitPrice: number;
+
+        if (ipadsInCart.length > 4) {
+            unitPrice = 499.99;
         } else {
-            product.unitPrice = 549.99;
+            unitPrice = 549.99;
         }
+
+        ipadsInCart.forEach(item => item.unitPrice = unitPrice);
     }
 
     static getInstance(): PricingRule {
