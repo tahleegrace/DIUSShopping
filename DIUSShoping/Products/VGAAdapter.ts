@@ -1,4 +1,6 @@
-class VGAAdapter extends Product {
+import { Product } from "./Product";
+
+export class VGAAdapter extends Product {
     sku(): string {
         return 'vga';
     }

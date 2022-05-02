@@ -1,4 +1,6 @@
-class MacbookPro extends Product {
+import { Product } from "./Product";
+
+export class MacbookPro extends Product {
     sku(): string {
         return 'mbp';
     }

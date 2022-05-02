@@ -1,5 +1,7 @@
+import { PricingRule } from '../Pricing/PricingRule';
+
 // A product that can be added to a shopping cart.
-abstract class Product {
+export abstract class Product {
     abstract sku(): string;
     abstract name(): string;
 
@@ -24,5 +26,9 @@ abstract class Product {
 
     set pricingRule(value: PricingRule) {
         this._pricingRule = value;
+    }
+
+    toString() {
+        return Array(this.quantity).fill(this.sku()).join(',');
     }
 }

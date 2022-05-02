@@ -1,4 +1,6 @@
-class AppleTV extends Product {
+import { Product } from "./Product";
+
+export class AppleTV extends Product {
     sku(): string {
         return 'atv';
     }
