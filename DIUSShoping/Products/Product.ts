@@ -14,15 +14,15 @@ abstract class Product {
         this._quantity = value;
     }
 
-    // The pricing stategy to use.
+    // The pricing rule to use.
     // Using the Bridge design pattern (https://en.wikipedia.org/wiki/Bridge_pattern)
-    _pricingStrategy: PricingStrategy;
+    _pricingRule: PricingRule;
 
-    get pricingStrategy() {
-        return this._pricingStrategy;
+    get pricingRule() {
+        return this._pricingRule;
     }
 
-    set pricingStrategy(value: PricingStrategy) {
-        this._pricingStrategy = value;
+    set pricingRule(value: PricingRule) {
+        this._pricingRule = value;
     }
 }
