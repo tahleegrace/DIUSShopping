@@ -2,6 +2,8 @@ import { Product } from "../Products/Product";
 import { PricingRule } from "./PricingRule";
 
 export class IPadPricingRule extends PricingRule {
+    private static _instance = new IPadPricingRule();
+
     ipadSku = 'ipd';
 
     private constructor() {
@@ -26,7 +28,7 @@ export class IPadPricingRule extends PricingRule {
         ipadsInCart.forEach(item => item.unitPrice = unitPrice);
     }
 
-    static getInstance(): PricingRule {
-        return new IPadPricingRule();
+    static getInstance(): IPadPricingRule {
+        return this._instance;
     }
 }
