@@ -1,5 +1,3 @@
-import { PricingRule } from '../Pricing/PricingRule';
-
 // A product that can be added to a shopping cart.
 export abstract class Product {
     abstract sku(): string;
@@ -16,16 +14,19 @@ export abstract class Product {
         this._quantity = value;
     }
 
-    // The pricing rule to use.
-    // Using the Bridge design pattern (https://en.wikipedia.org/wiki/Bridge_pattern)
-    _pricingRule: PricingRule;
+    // Unit price.
+    _unitPrice: number;
 
-    get pricingRule() {
-        return this._pricingRule;
+    get unitPrice() {
+        return this._unitPrice;
     }
 
-    set pricingRule(value: PricingRule) {
-        this._pricingRule = value;
+    set unitPrice(value: number) {
+        this._unitPrice = value;
+    }
+
+    totalPrice() {
+        return this.unitPrice * this.quantity;
     }
 
     toString() {
