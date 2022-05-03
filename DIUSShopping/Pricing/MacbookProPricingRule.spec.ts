@@ -39,7 +39,7 @@ describe('MacBook Pro pricing rule', () => {
         });
     });
 
-    describe.only('when there is one MacBook Pro and two VGA adapters in the cart', () => {
+    describe('when there is one MacBook Pro and two VGA adapters in the cart', () => {
         let cart: Product[];
         let firstVgaAdapter: VGAAdapter;
         let secondVgaAdapter: VGAAdapter;
