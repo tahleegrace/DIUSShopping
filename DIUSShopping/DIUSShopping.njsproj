@@ -40,6 +40,12 @@
     <Content Include="tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Pricing\AppleTVPricingRule.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pricing\AppleTVPricingRule.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Pricing\IPadPricingRule.spec.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
