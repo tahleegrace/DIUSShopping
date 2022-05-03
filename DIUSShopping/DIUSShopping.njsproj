@@ -46,6 +46,12 @@
     <TypeScriptCompile Include="Pricing\IPadPricingRule.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Pricing\MacbookProPricingRule.spec.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Pricing\MacbookProPricingRule.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Pricing\VGAAdapterPricingRule.spec.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
