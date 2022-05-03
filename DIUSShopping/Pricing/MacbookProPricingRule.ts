@@ -17,11 +17,11 @@ export class MacbookProPricingRule extends PricingRule {
 
         // Find the total amount of VGA adapters in the cart. If we have less VGA adapters than Macbook Pros, then add additional free adapters.
         // Otherwise make the same amount of VGA adapters free.
-        const totalMacbooksInCart = cart.filter(item => item.sku() === ProductSKU.macbookPro).length;
+        const macbooksInCart = cart.filter(item => item.sku() === ProductSKU.macbookPro);
         const vgaAdaptersInCart = cart.filter(item => item.sku() === ProductSKU.vgaAdapter);
 
-        if (totalMacbooksInCart > vgaAdaptersInCart.length) {
-            const numberOfVGAAdaptersToAdd = totalMacbooksInCart - vgaAdaptersInCart.length;
+        if (macbooksInCart.length > vgaAdaptersInCart.length) {
+            const numberOfVGAAdaptersToAdd = macbooksInCart.length - vgaAdaptersInCart.length;
 
             for (let i = 0; i < numberOfVGAAdaptersToAdd; i++) {
                 const adapter = new VGAAdapter();
@@ -31,9 +31,12 @@ export class MacbookProPricingRule extends PricingRule {
         }
 
         // Make sure at least the same amount of VGA adapters as Macbook Pros are free in the cart.
-        for (let i = 0; (i < totalMacbooksInCart) && (i < vgaAdaptersInCart.length); i++) {
+        for (let i = 0; (i < macbooksInCart.length) && (i < vgaAdaptersInCart.length); i++) {
             vgaAdaptersInCart[i].unitPrice = 0;
         }
+
+        // Set the price of each MacBook Pro to $1399.99.
+        macbooksInCart.forEach(item => item.unitPrice = 1399.99);
     }
 
     static getInstance(): MacbookProPricingRule {

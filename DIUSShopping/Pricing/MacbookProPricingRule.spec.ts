@@ -7,18 +7,25 @@ describe('MacBook Pro pricing rule', () => {
     describe('when there is one MacBook Pro and one VGA adapter in the cart', () => {
         let cart: Product[];
         let vgaAdapter: VGAAdapter;
+        let macbookPro: MacbookPro;
 
         beforeEach(() => {
             vgaAdapter = new VGAAdapter();
             vgaAdapter.unitPrice = 30.00;
 
-            cart = [vgaAdapter, new MacbookPro()];
+            macbookPro = new MacbookPro();
+
+            cart = [vgaAdapter, macbookPro];
 
             MacbookProPricingRule.getInstance().calculate(cart);
         });
 
         it('should set the unit price of the VGA adapter to $0.00', () => {
             expect(vgaAdapter.unitPrice).toEqual(0);
+        });
+
+        it('should set the price of the MacBook Pro to $1399.99', () => {
+            expect(macbookPro.unitPrice).toEqual(1399.99);
         });
     });
 
